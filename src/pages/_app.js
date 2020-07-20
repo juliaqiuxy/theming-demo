@@ -95,13 +95,13 @@ class App extends NextApp {
     }
 
     const ssrNow = Date.now();
-    const preferredTheme = getThemePreference(ctx) || 'dark';
+    const preferredTheme = getThemePreference(ctx);
 
     return { pageProps, ssrNow, preferredTheme };
   }
 
   render() {
-    const { Component, pageProps, preferredTheme /* ssrNow */ } = this.props;
+    const { Component, pageProps, preferredTheme } = this.props;
     return (
       <>
         <Head />
