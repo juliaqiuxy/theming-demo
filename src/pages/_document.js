@@ -52,6 +52,7 @@ class Document extends NextDocument {
     if (pageProps) {
       ({ preferredTheme } = pageProps);
     }
+
     return (
       <Html lang="en" dir="ltr">
         <Head />

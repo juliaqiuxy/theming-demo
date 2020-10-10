@@ -8,8 +8,8 @@ import { ThemeProvider, getThemePreference } from '../lib/useTheme';
 import Head from '../components/Head/Head';
 
 const lightVars = `
-  --bg: #fcffff;
-  --fg: #0d0e14;
+  --bg: #FCFFFF;
+  --fg: #0D0E14;
 
   --accents-0: #AAAAAA;
 
@@ -22,7 +22,7 @@ const lightVars = `
 `;
 
 const darkVars = `
-  --bg: #0d0e14; 
+  --bg: #0D0E14; 
   --fg: #EDEDED;
 
   --accents-0: #9B9B9B;
@@ -32,7 +32,7 @@ const darkVars = `
 
   --dashed-border: #9B9B9B;
 
-  --bg-overlay: #0d0e14;
+  --bg-overlay: #0D0E14;
  `;
 
 const themeVars = `
@@ -94,10 +94,9 @@ class App extends NextApp {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    const ssrNow = Date.now();
     const preferredTheme = getThemePreference(ctx);
 
-    return { pageProps, ssrNow, preferredTheme };
+    return { pageProps, preferredTheme };
   }
 
   render() {

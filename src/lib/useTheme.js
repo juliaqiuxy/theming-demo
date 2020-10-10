@@ -7,12 +7,12 @@ import React, {
 } from 'react';
 
 import {
-  setCookie, parseCookies, destroyCookie, BASE_COOKIE_OPTIONS,
+  setCookie, parseCookies, destroyCookie,
 } from './cookies';
 
 const context = createContext();
 
-export const getThemePreference = (ctx) => parseCookies(ctx, BASE_COOKIE_OPTIONS).theme;
+export const getThemePreference = (ctx) => parseCookies(ctx).theme;
 
 export const ThemeProvider = ({ children, ...props }) => {
   const [preferredTheme, setPreferredTheme] = useState(
@@ -33,9 +33,9 @@ export const ThemeProvider = ({ children, ...props }) => {
     }
 
     if (preference) {
-      setCookie(null, 'theme', preference, BASE_COOKIE_OPTIONS);
+      setCookie(null, 'theme', preference);
     } else {
-      destroyCookie(null, 'theme', BASE_COOKIE_OPTIONS);
+      destroyCookie(null, 'theme');
     }
 
     setPreferredTheme(preference);

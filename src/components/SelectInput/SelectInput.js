@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import DownImg from './images/down.svg';
-
-const DownIcon = styled(DownImg)``;
+import DownIcon from './images/down.svg';
 
 const SelectLabel = styled.div`
   font-weight: 200;
@@ -91,27 +89,26 @@ const StyledOption = styled.option`
 const SelectInput = (props) => {
   const option = props.options.find((opt) => opt.value === props.value);
 
-  const { innerRef, options, labelIcon } = props;
+  const { options, labelIcon } = props;
   const LabelIcon = labelIcon;
 
   return (
-    <SelectContainer compact={props.compact} outline={props.outline}>
-      <SelectLabel compact={props.compact} outline={props.outline}>
+    <SelectContainer>
+      <SelectLabel>
         {
           LabelIcon ? (
-            <LabelIconWrapper compact={props.compact} outline={props.outline}>
+            <LabelIconWrapper>
               <LabelIcon />
             </LabelIconWrapper>
           )
             : null
         }
         {option?.label || props.placeholder}
-        <DownIconWrapper compact={props.compact} outline={props.outline}>
+        <DownIconWrapper>
           <DownIcon />
         </DownIconWrapper>
       </SelectLabel>
       <StyledSelect
-        ref={innerRef}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       >
