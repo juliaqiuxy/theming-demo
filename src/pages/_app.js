@@ -94,7 +94,7 @@ class App extends NextApp {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    const preferredTheme = getThemePreference(ctx);
+    const preferredTheme = Component.themeOverride || getThemePreference(ctx);
 
     return { pageProps, preferredTheme };
   }
