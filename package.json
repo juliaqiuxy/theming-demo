@@ -6,7 +6,7 @@
     "node": ">=10.16.0"
   },
   "dependencies": {
-    "next": "^9.5.5",
+    "next": "^11.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.2.0",
